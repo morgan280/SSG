@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations — We Find You Your Next Location | Store Stop Go LLC</title>
+<meta name="description" content="Explore Store Stop Go's active corridors and markets — sites scouted, under contract, and delivered across 23 states. We find you your next location.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M15.3 8.1A26 26 0 0 0 23.1 52.4" fill="none" stroke="%23D7282F" stroke-width="8" stroke-linecap="round"/><path d="M19 5.5A26 26 0 0 1 45 5.5" fill="none" stroke="%23FFB400" stroke-width="8" stroke-linecap="round"/><path d="M48.7 8.1A26 26 0 0 1 40.9 52.4" fill="none" stroke="%23189A46" stroke-width="8" stroke-linecap="round"/><path d="M32 56C27 47 18.5 40.5 18.5 27.5A13.5 13.5 0 1 1 45.5 27.5C45.5 40.5 37 47 32 56Z" fill="%230E2233"/></svg>'>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,700;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/map.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Store Stop Go LLC — home">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M3.5 52.5 19 42.5 24.5 47.8 10 57.5Z" fill="#D7282F"/>
+        <path d="M25.8 56.5 32 44 38.2 56.5Z" fill="#FFB400"/>
+        <path d="M60.5 52.5 45 42.5 39.5 47.8 54 57.5Z" fill="#189A46"/>
+        <path d="M15.3 8.1A26 26 0 0 0 9.5 41" fill="none" stroke="#D7282F" stroke-width="8"/>
+        <path d="M19 5.5A26 26 0 0 1 45 5.5" fill="none" stroke="#FFB400" stroke-width="8"/>
+        <path d="M48.7 8.1A26 26 0 0 1 54.5 41" fill="none" stroke="#189A46" stroke-width="8"/>
+        <path d="M32 54C28 46 18 40.5 18 25A14 14 0 1 1 46 25C46 40.5 36 46 32 54Z" fill="#0E2233"/>
+        <circle cx="32" cy="25" r="10" fill="#fff"/>
+        <path d="M24.8 21.6 39.2 20.2 39.2 23.2 24.8 24.4Z" fill="#0E2233"/>
+        <rect x="26" y="24.8" width="12" height="6.4" rx=".8" fill="#0E2233"/>
+        <rect x="28" y="26.2" width="2.8" height="5" fill="#fff"/>
+        <rect x="32.4" y="26.2" width="4" height="3" fill="#fff"/>
+      </svg>
+      <span class="brand-name">
+        <em><span class="w-store">Store</span> <span class="w-stop">Stop</span> <span class="w-go">Go</span></em>
+        <small>Site Scouting &amp; Acquisition</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="locations.html" aria-current="page">Locations</a>
+      <a href="careers.html">Careers<span class="dot-hiring" title="Now hiring"></span></a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn--sm nav-cta" href="contact.html">Find My Location
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+    </a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================= PAGE HERO ======================= -->
+  <section class="page-hero">
+    <svg class="arc-bg" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M15.3 8.1A26 26 0 0 0 23.1 52.4" fill="none" stroke="#D7282F" stroke-width="4" stroke-linecap="round"/>
+      <path d="M19 5.5A26 26 0 0 1 45 5.5" fill="none" stroke="#FFB400" stroke-width="4" stroke-linecap="round"/>
+      <path d="M48.7 8.1A26 26 0 0 1 40.9 52.4" fill="none" stroke="#189A46" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="32" cy="29" r="17" fill="none" stroke="#0E2233" stroke-width="1" stroke-dasharray="2 4"/>
+    </svg>
+    <div class="wrap">
+      <div class="page-hero-inner">
+        <span class="eyebrow"><span class="tri" aria-hidden="true"><i></i><i></i><i></i></span>Active corridors &amp; markets</span>
+        <h1 class="h1">We find you your<br>next location.</h1>
+        <p class="lead">Every pin below is a corridor file in motion — red means we're scouting it, amber means it's under contract, green means the store is open and trading. Your next location is somewhere on this map.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= MAP ======================= -->
+  <section class="sec--tight" style="padding-top:0;margin-top:-16px">
+    <div class="wrap">
+      <div class="map-tools reveal">
+        <div class="map-filters" role="group" aria-label="Filter sites by status">
+          <button class="fbtn on" data-filter="all">All sites</button>
+          <button class="fbtn" data-filter="store"><i class="i-r" aria-hidden="true"></i>Scouting</button>
+          <button class="fbtn" data-filter="stop"><i class="i-a" aria-hidden="true"></i>Under contract</button>
+          <button class="fbtn" data-filter="go"><i class="i-g" aria-hidden="true"></i>Delivered</button>
+        </div>
+        <span class="map-note">Drag to pan · use the + / − controls to zoom · tap a pin for the corridor file</span>
+      </div>
+      <div class="map-shell reveal" style="--d:.1s">
+        <div id="map" aria-label="Map of Store Stop Go active sites"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= MARKETS ======================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><span class="tri" aria-hidden="true"><i></i><i></i><i></i></span>Where we hunt</span>
+        <h2 class="h2">Four regions. One playbook.</h2>
+      </div>
+      <div class="markets">
+        <article class="market reveal">
+          <small>Home turf</small>
+          <b>The Texas Triangle</b>
+          <p>I-35, I-10, I-45, I-20. The fastest-growing corridors in America — and the deepest bench of files in our portfolio.</p>
+          <div class="market-tally">
+            <div><b>6</b>active files</div>
+            <div><b>2</b>delivered</div>
+          </div>
+        </article>
+        <article class="market reveal" style="--d:.08s">
+          <small>Expanding</small>
+          <b>The Southeast</b>
+          <p>I-75, I-65, I-10 east. Population inflow, tourism traffic, and interchange land that still prices sanely.</p>
+          <div class="market-tally">
+            <div><b>5</b>active files</div>
+            <div><b>1</b>delivered</div>
+          </div>
+        </article>
+        <article class="market reveal" style="--d:.16s">
+          <small>Growing</small>
+          <b>The Heartland</b>
+          <p>I-44, I-40, I-35 north. Freight corridors and county seats where a great stop becomes the town's landmark.</p>
+          <div class="market-tally">
+            <div><b>3</b>active files</div>
+            <div><b>—</b>delivered</div>
+          </div>
+        </article>
+        <article class="market reveal" style="--d:.24s">
+          <small>Scouting</small>
+          <b>The Mountain West</b>
+          <p>I-25, I-10 west. High-growth front-range towns and desert corridors built for the next generation of travel centers.</p>
+          <div class="market-tally">
+            <div><b>2</b>active files</div>
+            <div><b>—</b>delivered</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= WATCHLIST ======================= -->
+  <section class="sec sec--bone">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><span class="tri" aria-hidden="true"><i></i><i></i><i></i></span>Corridor watchlist</span>
+        <h2 class="h2">Files currently in motion.</h2>
+        <p class="lead">A sample of what's on the board this quarter. The full pipeline is shared with partner brands under NDA.</p>
+      </div>
+      <div class="watch-scroll reveal">
+        <table class="watch">
+          <thead>
+            <tr><th>Corridor</th><th>Anchor market</th><th>AADT</th><th>Target acreage</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>I-35 North</b></td><td>Waco, TX</td><td class="aadt">142K</td><td>28 ac</td><td><span class="chip chip--go"><i></i>Delivered</span></td></tr>
+            <tr><td><b>I-35</b></td><td>New Braunfels, TX</td><td class="aadt">168K</td><td>24 ac</td><td><span class="chip chip--go"><i></i>Delivered</span></td></tr>
+            <tr><td><b>I-10 West</b></td><td>Baton Rouge, LA</td><td class="aadt">118K</td><td>18 ac</td><td><span class="chip chip--stop"><i></i>Under contract</span></td></tr>
+            <tr><td><b>I-20</b></td><td>Terrell, TX</td><td class="aadt">58K</td><td>22 ac</td><td><span class="chip chip--stop"><i></i>Under contract</span></td></tr>
+            <tr><td><b>I-10</b></td><td>Buckeye, AZ</td><td class="aadt">102K</td><td>35 ac</td><td><span class="chip chip--stop"><i></i>Under contract</span></td></tr>
+            <tr><td><b>I-45</b></td><td>Ennis, TX</td><td class="aadt">71K</td><td>25 ac</td><td><span class="chip chip--store"><i></i>Scouting</span></td></tr>
+            <tr><td><b>I-25</b></td><td>Monument, CO</td><td class="aadt">88K</td><td>29 ac</td><td><span class="chip chip--store"><i></i>Scouting</span></td></tr>
+            <tr><td><b>I-35W</b></td><td>Fort Worth (Alliance), TX</td><td class="aadt">124K</td><td>19 ac</td><td><span class="chip chip--store"><i></i>Scouting</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CTA ======================= -->
+  <section class="sec--tight" style="padding-bottom:76px">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <svg class="arc-deco" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M15.3 8.1A26 26 0 0 0 23.1 52.4" fill="none" stroke="#FF5A60" stroke-width="5" stroke-linecap="round"/>
+          <path d="M19 5.5A26 26 0 0 1 45 5.5" fill="none" stroke="#FFB400" stroke-width="5" stroke-linecap="round"/>
+          <path d="M48.7 8.1A26 26 0 0 1 40.9 52.4" fill="none" stroke="#3ECF6E" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <h2 class="h2">Growing somewhere we haven't pinned yet?</h2>
+        <p class="lead">Name the corridor. If the numbers are there, our scouts will be too — usually within two weeks.</p>
+        <div class="cta-ctas">
+          <a class="btn" href="contact.html">Request a corridor
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Store Stop Go LLC — home">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M3.5 52.5 19 42.5 24.5 47.8 10 57.5Z" fill="#FF6B6F"/>
+            <path d="M25.8 56.5 32 44 38.2 56.5Z" fill="#FFC533"/>
+            <path d="M60.5 52.5 45 42.5 39.5 47.8 54 57.5Z" fill="#3ECF6E"/>
+            <path d="M15.3 8.1A26 26 0 0 0 9.5 41" fill="none" stroke="#FF6B6F" stroke-width="8"/>
+            <path d="M19 5.5A26 26 0 0 1 45 5.5" fill="none" stroke="#FFC533" stroke-width="8"/>
+            <path d="M48.7 8.1A26 26 0 0 1 54.5 41" fill="none" stroke="#3ECF6E" stroke-width="8"/>
+            <path d="M32 54C28 46 18 40.5 18 25A14 14 0 1 1 46 25C46 40.5 36 46 32 54Z" fill="#fff"/>
+            <path d="M24.8 21.6 39.2 20.2 39.2 23.2 24.8 24.4Z" fill="#0E2233"/>
+            <rect x="26" y="24.8" width="12" height="6.4" rx=".8" fill="#0E2233"/>
+            <rect x="28" y="26.2" width="2.8" height="5" fill="#fff"/>
+            <rect x="32.4" y="26.2" width="4" height="3" fill="#fff"/>
+          </svg>
+          <span class="brand-name">
+            <em><span class="w-store">Store</span> <span class="w-stop">Stop</span> <span class="w-go">Go</span></em>
+          </span>
+        </a>
+        <span class="foot-tag">Find the site. Secure the deal. Open the doors.</span>
+        <p>Store Stop Go LLC is an independent site-selection and land-procurement firm for America's roadside retail brands. We buy locations. You grow.</p>
+        <span class="tri" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>What we do</h4>
+        <ul>
+          <li><a href="index.html#services">Corridor scouting</a></li>
+          <li><a href="index.html#services">Traffic intelligence</a></li>
+          <li><a href="index.html#services">Land acquisition</a></li>
+          <li><a href="index.html#services">Entitlements &amp; zoning</a></li>
+          <li><a href="index.html#services">Build-out coordination</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-contact">
+          <li><span><b>Email</b><br><a href="mailto:hello@storestopgo.com">hello@storestopgo.com</a></span></li>
+          <li><span><b>Phone</b><br><a href="tel:+18005550135">(800) 555-0135</a></span></li>
+          <li><span><b>Headquarters</b><br>Dallas–Fort Worth, Texas</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© <span id="yr">2026</span> Store Stop Go LLC. All rights reserved.</span>
+      <span>Independent firm. Not affiliated with or endorsed by any retail brand. Map data shown is illustrative.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
