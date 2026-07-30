@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sample portfolio data — replace with live corridor files.
   const spots = [
-    { name: 'Waco — I-35 North', state: 'TX', status: 'go', lat: 31.585, lng: -97.145, aadt: '142K', acres: 28, note: 'Delivered travel-center pad. Opened Q1 2026.' },
-    { name: 'New Braunfels — I-35', state: 'TX', status: 'go', lat: 29.703, lng: -98.121, aadt: '168K', acres: 24, note: 'Delivered. Fuel + QSR endcap, open and trading.' },
     { name: 'Ocala — I-75', state: 'FL', status: 'go', lat: 29.187, lng: -82.141, aadt: '96K', acres: 31, note: 'Delivered. Interchange NW quadrant, full access.' },
-    { name: 'Terrell — I-20', state: 'TX', status: 'stop', lat: 32.736, lng: -96.294, aadt: '58K', acres: 22, note: 'Under contract. Entitlements in progress.' },
-    { name: 'Baton Rouge — I-10 W', state: 'LA', status: 'stop', lat: 30.415, lng: -91.135, aadt: '118K', acres: 18, note: 'Under contract. Phase I complete, survey underway.' },
+    { name: 'Cheyenne — I-80', state: 'WY', status: 'go', lat: 41.140, lng: -104.820, aadt: '52K', acres: 26, note: 'Delivered. Freight-corridor travel center, open and trading.' },
+    { name: 'Savannah — I-95', state: 'GA', status: 'go', lat: 32.088, lng: -81.243, aadt: '78K', acres: 30, note: 'Delivered. Coastal interchange pad, opened this year.' },
     { name: 'Crossville — I-40', state: 'TN', status: 'stop', lat: 35.952, lng: -85.031, aadt: '46K', acres: 26, note: 'Under contract. Utility agreements in negotiation.' },
     { name: 'Athens — I-65', state: 'AL', status: 'stop', lat: 34.796, lng: -86.966, aadt: '74K', acres: 20, note: 'Under contract. Zoning hearing scheduled.' },
     { name: 'Buckeye — I-10', state: 'AZ', status: 'stop', lat: 33.373, lng: -112.556, aadt: '102K', acres: 35, note: 'Under contract. Title work in final review.' },
-    { name: 'Ennis — I-45', state: 'TX', status: 'store', lat: 32.329, lng: -96.622, aadt: '71K', acres: 25, note: 'Scouting. Traffic counts and drive-time study running.' },
-    { name: 'Luling — I-10', state: 'TX', status: 'store', lat: 29.681, lng: -97.647, aadt: '84K', acres: 30, note: 'Scouting. Two off-market parcels under review.' },
-    { name: 'Ardmore — I-35', state: 'OK', status: 'store', lat: 34.174, lng: -97.129, aadt: '51K', acres: 27, note: 'Scouting. Corridor drive complete, scoring in progress.' },
+    { name: 'Carlisle — I-81', state: 'PA', status: 'stop', lat: 40.201, lng: -77.189, aadt: '62K', acres: 24, note: 'Under contract. Phase I complete, survey underway.' },
+    { name: 'St. George — I-15', state: 'UT', status: 'stop', lat: 37.096, lng: -113.568, aadt: '44K', acres: 22, note: 'Under contract. Entitlements in progress.' },
     { name: 'Springfield — I-44', state: 'MO', status: 'store', lat: 37.208, lng: -93.292, aadt: '62K', acres: 23, note: 'Scouting. Growth-model flag: +9% five-year population.' },
     { name: 'Monument — I-25', state: 'CO', status: 'store', lat: 39.066, lng: -104.872, aadt: '88K', acres: 29, note: 'Scouting. Visibility and access scoring underway.' },
     { name: 'Richmond — I-75', state: 'KY', status: 'store', lat: 37.748, lng: -84.295, aadt: '57K', acres: 21, note: 'Scouting. Competitor-gap analysis flagged this exit.' },
-    { name: 'Fort Worth (Alliance) — I-35W', state: 'TX', status: 'store', lat: 32.987, lng: -97.318, aadt: '124K', acres: 19, note: 'Scouting. Logistics-corridor demand model in progress.' }
+    { name: 'Salem — I-5', state: 'OR', status: 'store', lat: 44.943, lng: -123.035, aadt: '112K', acres: 20, note: 'Scouting. Drive-time study running on two parcels.' },
+    { name: 'Rapid City — I-90', state: 'SD', status: 'store', lat: 44.081, lng: -103.231, aadt: '29K', acres: 32, note: 'Scouting. Seasonal tourism counts in progress.' },
+    { name: 'Elkhart — I-80/90', state: 'IN', status: 'store', lat: 41.682, lng: -85.977, aadt: '54K', acres: 23, note: 'Scouting. Logistics-corridor demand model in progress.' },
+    { name: 'Las Cruces — I-10', state: 'NM', status: 'store', lat: 32.320, lng: -106.776, aadt: '38K', acres: 28, note: 'Scouting. Corridor drive complete, scoring in progress.' }
   ];
 
   const label = { store: 'Scouting', stop: 'Under contract', go: 'Delivered' };
