@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(() => {
           if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
           if (errBox) {
-            errBox.textContent = 'Sorry — your brief didn’t send. Please try again, or reach us at hello@storestopgo.com or (800) 555-0135.';
+            errBox.textContent = 'Sorry — your brief didn’t send. Please try again, or reach us at hello@storestopgo.com or (888) 509-4001.';
             errBox.hidden = false;
           }
         });
