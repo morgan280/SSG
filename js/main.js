@@ -67,18 +67,50 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(el => io2.observe(el));
   }
 
-  /* contact form (demo submit — no backend wired yet) */
+  /* contact form → Web3Forms */
   const form = document.getElementById('site-form');
   if (form) {
+    const btn = form.querySelector('button[type="submit"]');
+    const errBox = document.getElementById('form-error');
+    const btnHTML = btn ? btn.innerHTML : '';
+
     form.addEventListener('submit', ev => {
       ev.preventDefault();
-      const wrap = document.getElementById('form-wrap');
-      const ok = document.getElementById('form-success');
-      if (wrap && ok) {
-        wrap.hidden = true;
-        ok.hidden = false;
-        ok.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-      }
+      if (!form.reportValidity()) return;
+
+      if (errBox) errBox.hidden = true;
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      const data = new FormData(form);
+      const criteria = data.getAll('crit');
+      data.delete('crit');
+      data.set('Site criteria', criteria.length ? criteria.join(', ') : '—');
+      data.set('replyto', data.get('email') || '');
+      data.set('subject', 'Site brief — ' + (data.get('company') || 'new enquiry'));
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data
+      })
+        .then(res => res.json().then(body => ({ ok: res.ok, body })))
+        .then(({ ok, body }) => {
+          if (!ok || !body.success) throw new Error(body.message || 'Submission failed');
+          const wrap = document.getElementById('form-wrap');
+          const done = document.getElementById('form-success');
+          if (wrap && done) {
+            wrap.hidden = true;
+            done.hidden = false;
+            done.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+          }
+        })
+        .catch(() => {
+          if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+          if (errBox) {
+            errBox.textContent = 'Sorry — your brief didn’t send. Please try again, or reach us at hello@storestopgo.com or (800) 555-0135.';
+            errBox.hidden = false;
+          }
+        });
     });
   }
 });

@@ -137,6 +137,9 @@
           <h2 class="h3" style="margin-bottom:6px">Site request brief</h2>
           <p style="color:var(--muted);font-size:.95rem;margin-bottom:26px">The more you share, the sharper the shortlist. Fields marked <em style="color:var(--red);font-style:normal">*</em> are required.</p>
           <form id="site-form" class="form-grid" novalidate="">
+            <input type="hidden" name="access_key" value="fc94220e-066a-4ffd-9696-51172a57cd83">
+            <input type="hidden" name="from_name" value="Store Stop Go website">
+            <label style="display:none" aria-hidden="true">Leave this empty<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
             <div class="field field--half">
               <label for="f-name">Full name <em>*</em></label>
               <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -184,18 +187,19 @@
             <div class="field field--full">
               <label>Site criteria</label>
               <div class="crits">
-                <label class="crit"><input type="checkbox" name="crit" value="frontage"><span>Highway frontage</span></label>
-                <label class="crit"><input type="checkbox" name="crit" value="acres"><span>5+ acres</span></label>
-                <label class="crit"><input type="checkbox" name="crit" value="fuel"><span>Fuel capable</span></label>
-                <label class="crit"><input type="checkbox" name="crit" value="drivethru"><span>Drive-thru ready</span></label>
-                <label class="crit"><input type="checkbox" name="crit" value="ev"><span>EV-ready power</span></label>
-                <label class="crit"><input type="checkbox" name="crit" value="bts"><span>Build-to-suit</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="Highway frontage"><span>Highway frontage</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="5+ acres"><span>5+ acres</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="Fuel capable"><span>Fuel capable</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="Drive-thru ready"><span>Drive-thru ready</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="EV-ready power"><span>EV-ready power</span></label>
+                <label class="crit"><input type="checkbox" name="crit" value="Build-to-suit"><span>Build-to-suit</span></label>
               </div>
             </div>
             <div class="field field--full">
               <label for="f-msg">Anything else we should know?</label>
               <textarea id="f-msg" name="message" placeholder="Store count goals, prototype size, deal structure preferences…"></textarea>
             </div>
+            <p id="form-error" class="form-error" role="alert" hidden></p>
             <div class="form-foot">
               <small>We reply within one business day. Your brief stays confidential — always.</small>
               <button class="btn" type="submit">Send the brief

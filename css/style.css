@@ -400,6 +400,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 .crit span:hover{border-color:var(--green)}
 .form-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:6px}
 .form-foot small{color:var(--muted);font-size:.82rem;max-width:34ch}
+.form-error{grid-column:1/-1;margin:0;padding:14px 16px;border-radius:12px;background:var(--red-t);color:var(--red-d);font-size:.92rem;font-weight:600;line-height:1.5;border:1px solid rgba(215,40,47,.22)}
 .form-success{text-align:center;padding:60px 30px;display:grid;gap:14px;justify-items:center}
 .form-success .ok-ring{width:84px;height:84px;border-radius:50%;background:var(--green-t);display:grid;place-items:center;color:var(--green-d)}
 .faq{max-width:820px;margin-inline:auto;display:grid;gap:14px}
